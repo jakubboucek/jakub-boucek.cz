@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jakub-boucek.cz/sitemap.xml
