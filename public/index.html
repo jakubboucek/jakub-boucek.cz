@@ -72,11 +72,10 @@
 			<div class="content">
 				<div class="row">
 					<div class="col-sm-4 hidden-xs">
-						<img src="/img/profil.jpg" width="206" height="206" class="profil" alt="Jakub Bouček">
+						<img src="/img/profil.jpg" width="206" height="206" class="profil click" data-click-url="/img/profil.jpg" alt="Jakub Bouček">
 					</div>
 					<div class="col-sm-8 col-xs-12">
 						<p>Jmenuji se <strong>Jakub Bouček</strong> a zabývám se programováním webových aplikací se zaměřením na jejich bezpečnost, použitelnost a efektivitu. Volný čas trávím průzkumem nových technologií, hledáním jejich zranitelností.</p>
-						<p>V současné době jsem na plný úvazek zaměstnán ve společnosti <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><a href="http://www.socialbakers.com/" target="_blank" itemprop="url"><span itemprop="name" class="org">Socialbakers, a.s.</span></a></span> jako <span itemprop="jobtitle" content="IT Support, Senior Developer, Socialbakers">uživatelská podpora</span> pro její zaměstnance.</p>
 						<p>Nabízím Vám konzultace a pomoc při zakládání webových stránek, jejich zabezpečení a propagace (nejen) na internetu. Své klienty si vybírám, při rozhodování zohledňuji Váše nadšení do věci, vstříctnost a otevřenost před finanční nabídkou.</p>
 					</div>
 				</div>
@@ -98,42 +97,34 @@
 				<div class="col-sm-6">
 					<ul class="nav nav-tabs">
 						<li class="injected"><h2>Adresa</h2></li>
-						<li role="presentation" class="active"><a href="#adresa-kontaktni" aria-controls="adresa-kontaktni" role="tab" data-toggle="tab">Kontaktní</a></li>
-						<li class="hide-xxs" role="presentation"><a href="#adresa-plzen" aria-controls="adresa-plzen" role="tab" data-toggle="tab">Plzeň</a></li>
-						<li role="presentation"><a href="#adresa-trvala" aria-controls="adresa-trvala" role="tab" data-toggle="tab">Trvalá</a></li>
+						<li role="presentation" class="active"><a href="#adresa-trvala" aria-controls="adresa-trvala" role="tab" data-toggle="tab">Trvalá</a></li>
+						<li role="presentation"><a href="#adresa-praha" aria-controls="adresa-praha" role="tab" data-toggle="tab">Praha</a></li>
 					</ul>
 					<div class="content tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="adresa-kontaktni" itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+						<div role="tabpanel" class="tab-pane fade in active" id="adresa-trvala" itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
 							<div class="action-box">
-								<a href="https://maps.google.cz/maps?q=28.+Pluku+885%2F10%2C+101+00+Praha" class="btn btn-default" role="button"><i class="glyphicon glyphicon-map-marker" aria-hidden="true" title="Mapa"></i></a>
-								<a href="https://maps.google.cz/maps?daddr=28.+Pluku+885%2F10%2C+101+00+Praha" class="btn btn-default" role="button"><i class="glyphicon glyphicon-road" aria-hidden="true" title="Navigace"></i></a>
+								<a href="https://maps.google.cz/maps?q=Heyrovsk%C3%A9ho+481%2F33%2C+301+00+Plze%C5%88+3-Doudlevce" class="btn btn-default" role="button"><i class="glyphicon glyphicon-map-marker" aria-hidden="true" title="Mapa"></i></a>
+								<a href="https://maps.google.cz/maps?daddr=Heyrovsk%C3%A9ho+481%2F33%2C+301+00+Plze%C5%88+3-Doudlevce" class="btn btn-default" role="button"><i class="glyphicon glyphicon-road" aria-hidden="true" title="Navigace"></i></a>
 							</div>
 							<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-								<h3>Preferovaná adresa</h3>
-								<p>
-									<span itemprop="streetAddress">28. Pluku 885/10</span><br>
-									<span itemprop="postalCode">101 00</span> <span itemprop="addressLocality" class="location">Praha 10</span>
+								<h3>Trvalá adresa</h3>
+								<p><span itemprop="streetAddress">Heyrovského 481/33</span><br>
+									<span itemprop="postalCode">301 00</span> <span itemprop="addressLocality" class="location">Plzeň 3</span></p>
+								<p><small>Změněno 1. 6. 2016, dříve Černokostelecká 206/3, Praha 10</small>
 								<meta itemprop="addressCountry" content="CZ">
 								</p>
 							</div>
 						</div>
-						<div role="tabpanel" class="tab-pane fade" id="adresa-plzen">
+						<div role="tabpanel" class="tab-pane fade" id="adresa-praha">
 							<div class="action-box">
-								<a href="https://maps.google.cz/maps?q=Plze%C5%88sk%C3%A1+921%2C+334+41+Dob%C5%99any" class="btn btn-default" role="button"><i class="glyphicon glyphicon-map-marker" aria-hidden="true" title="Mapa"></i></a>
-								<a href="https://maps.google.cz/maps?daddr=Plze%C5%88sk%C3%A1+921%2C+334+41+Dob%C5%99any" class="btn btn-default" role="button"><i class="glyphicon glyphicon-road" aria-hidden="true" title="Navigace"></i></a>
+								<a href="https://maps.google.cz/maps?q=28.+Pluku+885%2F10%2C+101+00+Praha" class="btn btn-default" role="button"><i class="glyphicon glyphicon-map-marker" aria-hidden="true" title="Mapa"></i></a>
+								<a href="https://maps.google.cz/maps?daddr=28.+Pluku+885%2F10%2C+101+00+Praha" class="btn btn-default" role="button"><i class="glyphicon glyphicon-road" aria-hidden="true" title="Navigace"></i></a>
 							</div>
-							<h3>Kontaktní adresa do Plzně</h3>
-							<p>Plzeňská 921<br>
-								334 41 Dobřany</p>
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="adresa-trvala">
-							<div class="action-box">
-								<a href="https://maps.google.cz/maps?q=%C4%8Cernokosteleck%C3%A1+206%2F3%2C+100+00+Praha" class="btn btn-default" role="button"><i class="glyphicon glyphicon-map-marker" aria-hidden="true" title="Mapa"></i></a>
-								<a href="https://maps.google.cz/maps?daddr=%C4%8Cernokosteleck%C3%A1+206%2F3%2C+100+00+Praha" class="btn btn-default" role="button"><i class="glyphicon glyphicon-road" aria-hidden="true" title="Navigace"></i></a>
-							</div>
-							<h3>Trvalá adresa <small>pro úřední věci</small></h3>
-							<p>Černokostelecká 206/3<br>
-								100 00 Praha 10</p>
+								<h3>Pražská adresa</h3>
+								<p>
+									28. Pluku 885/10<br>
+									101 00 Praha 10
+								</p>
 						</div>
 					</div>
 				</div>
@@ -155,7 +146,6 @@
 							</li>
 							<li class="no-more">Fio: 3003883017/2010</li>
 							<li class="no-more gray">Fio: 3003883025/2010 (<a href="https://www.fio.cz/ib2/transparent?a=3003883025" target="_blank">transparentní</a>)</li>
-							<li class="no-more">KB: 115-1724670207/0100</li>
 							<li class="no-more">Bitcoin: <a href="https://blockchain.info/address/1BouceknSqkadshrtVXZPxyXHkgyitZm65" target="_blank">1BouceknSqkadshrtVXZPxy…</a></li>
 						</ul>
 					</div>
@@ -167,7 +157,6 @@
 							<li>PGP klíč: <a href="keys/jakub-boucek-pgp.asc">0BFA A273</a> <small>(<a href="https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x225FDC9C0BFAA273" target="_blank">key server</a>)</small></li>
 							<li>Keybase.IO: <a href="https://keybase.io/jakubboucek" target="_blank">jakubboucek</a></li>
 							<li>MojeID: <a href="https://jakubboucek.mojeid.cz/" target="_blank">jakubboucek</a> <small>(ověřená identita)</small></li>
-							<li>StartSSL: <a href="https://jakubboucek.startssl.com/" target="_blank">jakubboucek</a>  <small>(ověřená identita)</small></li>
 						</ul>
 					</div>
 				</div>
@@ -209,7 +198,7 @@
 	</div>
 	<footer class="main">
 		<div class="container">
-			Jakub Bouček 2014
+			Jakub Bouček 2016
 		</div>
 	</footer>
 
