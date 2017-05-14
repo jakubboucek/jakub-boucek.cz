@@ -6,6 +6,13 @@
       "destination" : "https://blog.jakub-boucek.cz/",
       "type" : 301
     } ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/assets/**"
+    ],
     "headers": [{
       "source": "**",
       "headers": [{
