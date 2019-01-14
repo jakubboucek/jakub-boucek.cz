@@ -8,11 +8,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "grunt": "^1.0.1",
+    "bootstrap": "^3.4.0",
+    "grunt": "^1.0.3",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-less": "^1.4.1",
-    "grunt-contrib-uglify": "^3.0.0",
-    "jquery": "^3.2.1"
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-uglify": "^4.0.0",
+    "jquery": "^3.3.1"
   }
 }
