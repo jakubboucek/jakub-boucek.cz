@@ -1,11 +1,19 @@
 {
   "hosting": {
     "public": "public",
-    "redirects": [ {
-      "source" : "/blog/**",
-      "destination" : "https://blog.jakub-boucek.cz/",
-      "type" : 301
-    } ],
+    "cleanUrls": true,
+    "redirects": [
+      {
+        "source" : "/index",
+        "destination" : "/",
+        "type" : 301
+      },
+      {
+        "source" : "/blog/**",
+        "destination" : "https://blog.jakub-boucek.cz/",
+        "type" : 301
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
