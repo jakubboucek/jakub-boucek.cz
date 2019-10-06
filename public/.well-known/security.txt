@@ -13,10 +13,11 @@ Encryption: https://keybase.io/jakubboucek/pgp_keys.asc
 # Please speak English ~~ a nebo mi napište Česky
 Preferred-Languages: cs, en
 Canonical: https://www.jakub-boucek.cz/.well-known/security.txt
+OpenBugBounty: https://openbugbounty.org/bugbounty/JakubBoucek/
 -----BEGIN PGP SIGNATURE-----
 
-iHUEAREKAB0WIQTO9r3W4mXrlJ9beRrI8be4WVvGzgUCXWmlegAKCRDI8be4WVvG
-zkUIAQDp6YdkCEKvV96PrszQMztOTcNrdPHgvdOFrI3tG3GP5QD/TeToCmWAb+tn
-OiTXH7NPj7gKJr+B7iED2/8JH4KvUQ8=
-=oDyQ
+iHUEAREKAB0WIQTO9r3W4mXrlJ9beRrI8be4WVvGzgUCXZo9FgAKCRDI8be4WVvG
+zt3GAQC1cd+kpEQPy5yWw4G1ZgcnIhe1lDwzp0aNW+7QQeIZIgEA9MWQ2idUIFAO
+/eKjJVpZwjT+AaruPDzW+ywrJd/6JzI=
+=GSrV
 -----END PGP SIGNATURE-----
