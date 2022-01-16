@@ -12,6 +12,11 @@
         "source" : "/blog/**",
         "destination" : "https://blog.jakub-boucek.cz/",
         "type" : 301
+      },
+      {
+        "source" : "/dekuji{,/}",
+        "destination" : "https://form.simpleshop.cz/nkkQ/",
+        "type" : 302
       }
     ],
     "ignore": [
