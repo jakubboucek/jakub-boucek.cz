@@ -14,7 +14,7 @@
         "type" : 301
       },
       {
-        "source" : "/dekuji{,/}",
+        "source" : "/@(dekuji|diky|podekovat){,/}",
         "destination" : "https://form.simpleshop.cz/nkkQ/",
         "type" : 302
       }
