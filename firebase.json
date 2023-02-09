@@ -4,19 +4,19 @@
     "cleanUrls": true,
     "redirects": [
       {
-        "source" : "/index",
-        "destination" : "/",
-        "type" : 301
+        "source": "/index",
+        "destination": "/",
+        "type": 301
       },
       {
-        "source" : "/blog/**",
-        "destination" : "https://blog.jakub-boucek.cz/",
-        "type" : 301
+        "source": "/blog/**",
+        "destination": "https://blog.jakub-boucek.cz/",
+        "type": 301
       },
       {
-        "source" : "/@(dekuji|diky|podekovat){,/}",
-        "destination" : "https://form.simpleshop.cz/nkkQ/",
-        "type" : 302
+        "source": "/@(dekuji|diky|podekovat){,/}",
+        "destination": "https://form.simpleshop.cz/nkkQ/",
+        "type": 302
       }
     ],
     "ignore": [
@@ -26,24 +26,28 @@
       "**/.git/**",
       "**/assets/**"
     ],
-    "headers": [{
-      "source": "**",
-      "headers": [{
-        "key" : "Cache-Control",
-        "value" : "max-age=3600"
-      },
+    "headers": [
       {
-        "key" : "X-Frame-Options",
-        "value" : "SAMEORIGIN"
-      },
-      {
-        "key" : "X-XSS-Protection",
-        "value" : "1; mode=block"
-      },
-      {
-        "key" : "X-Content-Type-Options",
-        "value" : "nosniff"
-      }]
-    }]
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=3600"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "X-XSS-Protection",
+            "value": "1; mode=block"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          }
+        ]
+      }
+    ]
   }
 }
