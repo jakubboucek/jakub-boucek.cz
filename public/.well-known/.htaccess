@@ -1,3 +1,0 @@
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^jakub-boucek\.cz$
-RewriteRule keybase.txt keybase-jakub-boucek.txt [L,QSA,NE]
