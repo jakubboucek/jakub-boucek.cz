@@ -1,0 +1,4 @@
+Contact: mailto:pan@jakubboucek.cz
+Contact: https://www.jakub-boucek.cz/
+Expires: 2025-12-31T23:59:00Z
+Preferred-Languages: cs, en
