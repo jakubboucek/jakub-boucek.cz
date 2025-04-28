@@ -66,7 +66,12 @@
 			<div class="content">
 				<div class="row">
 					<div class="col-sm-4 hidden-xs">
-						<img src="/img/profil.jpg" width="206" height="206" class="profil click" data-click-url="/img/profil.jpg" alt="Jakub Bouček">
+						<picture>
+							<source type="image/avif" srcset="/img/profil.avif 1024w, /img/profil-500px.avif 500w">
+							<source type="image/webp" srcset="/img/profil.webp 1024w, /img/profil-500px.webp 500w">
+							<img src="/img/profil.jpg" srcset="/img/profil.jpg 1024w, /img/profil-500px.jpg 500w"
+								 width="206" height="206" class="profil click" alt="Jakub Bouček">
+						</picture>
 					</div>
 					<div class="col-sm-8 col-xs-12">
 						<p>Jmenuji se <strong>Jakub Bouček</strong> a jsem 🚂🚃🚃🚃 strojvedoucí
