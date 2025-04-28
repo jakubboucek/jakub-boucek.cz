@@ -9,6 +9,11 @@
         "type": 301
       },
       {
+        "source": "/security.txt",
+        "destination": "/.well-known/security.txt",
+        "type": 301
+      },
+      {
         "source": "/blog/**",
         "destination": "https://blog.jakub-boucek.cz/",
         "type": 301
