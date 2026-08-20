@@ -28,9 +28,15 @@ Personal static website, deployed to Firebase Hosting via GitHub Actions.
   that kept the h1 margins inside the header; BS5 dropped it.
 - BS3 drew table row separators *above* rows, BS5 *below* — the last-row
   border is stripped in `bootstrap.scss` so the lines land identically.
-- Icons are inline Bootstrap Icons SVGs in the HTML (glyphicons were removed
-  in BS5); no icon font is shipped. The bank-box button holds both zoom
-  icons, JS toggles `d-none` between them.
+- Icons are inline Material Symbols SVGs in the HTML (from
+  `@iconify-json/material-symbols`, Apache-2.0; glyphicons were removed in
+  BS5); no icon font, no runtime Iconify. To add an icon, install that
+  package with `--no-save` and copy the path from `icons.json`.
+- The bank box is state-driven: JS only toggles `.open` on `#bank-box`
+  (plus `aria-expanded`); CSS decides visibility of `.only-more`/`.no-more`
+  and the two zoom icons, and animates via a grid-template-rows 0fr/1fr
+  transition (collapsible elements need a single wrapper child with
+  `overflow: hidden`).
 
 ## Gotchas
 
