@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       development: {
         files: {
           'public/css/style.css': [
-            'assets/less/style.less'
+            'src/less/style.less'
           ]
         }
       }
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             'node_modules/jquery/dist/jquery.js',
             'node_modules/bootstrap/js/tab.js',
             'node_modules/bootstrap/js/transition.js',
-            'assets/js/main.js'
+            'src/js/main.js'
           ]
         }
       }

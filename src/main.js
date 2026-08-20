@@ -1,3 +1,7 @@
+import $ from 'jquery';
+import 'bootstrap/js/transition';
+import 'bootstrap/js/tab';
+
 $(function() {
 	$('.nav-tabs a').click(function (e) {
 	 	e.preventDefault();

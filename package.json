@@ -1,18 +1,31 @@
 {
-  "name": "jakubboucek.firebaseapp.com",
-  "version": "1.0.0",
+  "name": "jakub-boucek.cz",
   "description": "Jakub Bouček's website",
   "private": true,
-  "scripts": {
-    "build": "grunt"
-  },
   "license": "MIT",
   "devDependencies": {
     "bootstrap": "^3.4.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
     "grunt": "^1.0.3",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-uglify": "^4.0.0",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "less": "^4.3.0",
+    "less-loader": "^12.3.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "sass": "^1.87.0",
+    "terser-webpack-plugin": "^5.3.14",
+    "vite": "^6.3.4",
+    "vite-plugin-static-copy": "^2.3.1",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "watch": "webpack --watch --mode development"
   }
 }
