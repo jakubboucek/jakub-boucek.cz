@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist",
     "cleanUrls": true,
     "redirects": [
       {
@@ -26,10 +26,8 @@
     ],
     "ignore": [
       "firebase.json",
-      "**/.*",
       "**/node_modules/**",
-      "**/.git/**",
-      "**/assets/**"
+      "**/.git/**"
     ],
     "headers": [
       {
