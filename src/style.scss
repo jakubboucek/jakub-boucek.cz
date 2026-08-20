@@ -70,13 +70,57 @@ body.vcard h1 a {
 		float: right;
 	}
 
-	.only-more {
-		display: none;
-	}
-
 	img#qr-platba {
 		width: 100%;
 		max-width: 350px;
+	}
+}
+
+// Bank box: the .open class on #bank-box decides what is visible,
+// the 0fr/1fr grid-row transition animates the slide (each collapsible
+// element wraps its content in a single child with overflow: hidden)
+#bank-box {
+	.only-more,
+	.no-more {
+		display: grid;
+		transition: grid-template-rows .2s ease-in-out, visibility .2s;
+
+		> * {
+			overflow: hidden;
+		}
+	}
+
+	.only-more {
+		grid-template-rows: 0fr;
+		visibility: hidden;
+	}
+
+	.no-more {
+		grid-template-rows: 1fr;
+	}
+
+	.icon-collapse {
+		display: none;
+	}
+
+	&.open {
+		.only-more {
+			grid-template-rows: 1fr;
+			visibility: visible;
+		}
+
+		.no-more {
+			grid-template-rows: 0fr;
+			visibility: hidden;
+		}
+
+		.icon-expand {
+			display: none;
+		}
+
+		.icon-collapse {
+			display: inline;
+		}
 	}
 }
 
