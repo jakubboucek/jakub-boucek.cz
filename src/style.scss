@@ -76,6 +76,14 @@ body.vcard h1 a {
 	}
 }
 
+// Inline SVG icons (Material Symbols). The old glyphicons' ink filled
+// the whole 14px em box, Material Symbols pad 2/24 per side, so the
+// box must be 24/20 larger for the same optical size
+.icon {
+	width: 1.2em;
+	height: 1.2em;
+}
+
 // Bank box: the .open class on #bank-box decides what is visible,
 // the 0fr/1fr grid-row transition animates the slide (each collapsible
 // element wraps its content in a single child with overflow: hidden)
