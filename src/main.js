@@ -1,4 +1,4 @@
-import './style.less';
+import './style.scss';
 
 // Vanilla replacement for jQuery's slideToggle(), height-based, 200 ms
 const slideStates = new WeakMap();
@@ -40,12 +40,11 @@ function slideToggle(el, duration = 200) {
 const bankBox = document.getElementById('bank-box');
 if (bankBox) {
 	const button = bankBox.querySelector('#bank-show-more');
-	const icon = button.querySelector('i.glyphicon');
+	const icons = button.querySelectorAll('svg');
 	const rows = bankBox.querySelectorAll('.no-more, .only-more');
 
 	button.addEventListener('click', () => {
-		icon.classList.toggle('glyphicon-zoom-in');
-		icon.classList.toggle('glyphicon-zoom-out');
+		icons.forEach((icon) => icon.classList.toggle('d-none'));
 		rows.forEach((el) => slideToggle(el));
 	});
 }

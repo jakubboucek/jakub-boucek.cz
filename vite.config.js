@@ -13,9 +13,10 @@ export default defineConfig({
     },
     css: {
         preprocessorOptions: {
-            less: {
-                // Bootstrap 3 Less sources rely on pre-v4 math behavior
-                math: 'always',
+            scss: {
+                // Bootstrap 5 still uses @import and legacy color functions
+                quietDeps: true,
+                silenceDeprecations: ['import'],
             },
         },
     },

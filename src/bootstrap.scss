@@ -1,0 +1,100 @@
+// Bootstrap 5 setup. Variable values are ported from the previous
+// Bootstrap 3 build to keep the rendered output as close to 1:1
+// as possible (source of truth: the compiled BS3 stylesheet).
+
+@import "../node_modules/bootstrap/scss/functions";
+
+// Typography
+$font-family-sans-serif:  "Open Sans", Helvetica, Arial, sans-serif;
+$font-size-base:          .875rem; // 14px
+$line-height-base:        1.428571429;
+$paragraph-margin-bottom: 10px;
+$headings-font-weight:    500;
+$headings-line-height:    1.1;
+$headings-margin-bottom:  10px;
+$h1-font-size:            36px;
+$h2-font-size:            30px;
+$h3-font-size:            $font-size-base;
+$h4-font-size:            $font-size-base;
+$small-font-size:         85%;
+
+// Colors
+$body-color:              #666;
+$body-bg:                 #fff;
+$link-color:              #337ab7;
+$link-decoration:         none;
+$link-hover-decoration:   underline;
+
+// Components
+$border-radius:           4px;
+$border-radius-lg:        6px;
+
+// Grid: BS3's "sm" breakpoint (768px) maps to BS5's "md",
+// container is fluid below md and capped at 750px above
+$grid-gutter-width:       30px;
+$container-max-widths: (
+  md: 750px,
+  lg: 750px,
+  xl: 750px,
+  xxl: 750px
+);
+
+// Tables (BS3 .table-condensed had 5px cell padding)
+$table-cell-padding-y-sm: 5px;
+$table-cell-padding-x-sm: 5px;
+$table-border-color:      #ddd;
+
+// BS3 had no responsive font scaling nor smooth scrolling
+$enable-rfs:              false;
+$enable-smooth-scroll:    false;
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Layout & components (only the modules this site uses)
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/tables";
+@import "../node_modules/bootstrap/scss/buttons";
+
+// Utilities (d-none, d-md-block, order-md-*, ...)
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// Bootstrap 3's default button, absent from Bootstrap 5
+.btn-default {
+  @include button-variant(
+    #fff,
+    #ccc,
+    $color: #333,
+    $hover-background: #e6e6e6,
+    $hover-border: #adadad,
+    $hover-color: #333,
+    $active-background: #e6e6e6,
+    $active-border: #adadad,
+    $active-color: #333
+  );
+}
+
+// BS3 heading/table spacing kept for visual parity
+h1, h2, h3 {
+  margin-top: 20px;
+}
+
+h4, h5, h6 {
+  margin-top: 10px;
+}
+
+.table {
+  margin-bottom: 20px;
+
+  // BS3 drew separators above rows, BS5 below - drop the trailing line
+  > :not(caption) > *:last-child > * {
+    border-bottom-width: 0;
+  }
+}
