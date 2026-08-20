@@ -3,3 +3,4 @@ public/fonts
 public/css
 public/js
 .firebase
+firebase-debug.log
