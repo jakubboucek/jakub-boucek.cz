@@ -1,5 +1,5 @@
 import './style.less';
-import $ from 'jquery';
+import $ from './jquery-global.js';
 import 'bootstrap/js/transition';
 import 'bootstrap/js/tab';
 
