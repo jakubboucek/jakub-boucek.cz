@@ -1,3 +1,8 @@
+import './style.less';
+import $ from './jquery-global.js';
+import 'bootstrap/js/transition';
+import 'bootstrap/js/tab';
+
 $(function() {
 	$('.nav-tabs a').click(function (e) {
 	 	e.preventDefault();

@@ -1,5 +1,5 @@
 // Core variables and mixins
-@import "../../node_modules/bootstrap/less/variables.less";
+@import "../node_modules/bootstrap/less/variables.less";
 
 // Modifications
 @gray-base:               #333;
@@ -12,35 +12,36 @@
 @font-family-base:        @font-family-sans-serif;
 @font-size-h3:            @font-size-base;
 @font-size-h4:            @font-size-base;
-@icon-font-path:          "../fonts/bootstrap/";
+// Resolved by Vite relative to this file, fonts are emitted to the bundle
+@icon-font-path:          "../node_modules/bootstrap/fonts/";
 @container-desktop:       (720px + @grid-gutter-width);
 @container-md:            @container-desktop;
 @container-large-desktop: (720px + @grid-gutter-width);
 @container-lg:            @container-large-desktop;
 
 
-@import "../../node_modules/bootstrap/less/mixins.less";
+@import "../node_modules/bootstrap/less/mixins.less";
 
 // Reset and dependencies
-@import "../../node_modules/bootstrap/less/normalize.less";
-@import "../../node_modules/bootstrap/less/print.less";
-@import "../../node_modules/bootstrap/less/glyphicons.less";
+@import "../node_modules/bootstrap/less/normalize.less";
+@import "../node_modules/bootstrap/less/print.less";
+@import "../node_modules/bootstrap/less/glyphicons.less";
 
 // Core CSS
-@import "../../node_modules/bootstrap/less/scaffolding.less";
-@import "../../node_modules/bootstrap/less/type.less";
+@import "../node_modules/bootstrap/less/scaffolding.less";
+@import "../node_modules/bootstrap/less/type.less";
 // @import "../../node_modules/bootstrap/less/code.less";
-@import "../../node_modules/bootstrap/less/grid.less";
-@import "../../node_modules/bootstrap/less/tables.less";
-@import "../../node_modules/bootstrap/less/forms.less";
-@import "../../node_modules/bootstrap/less/buttons.less";
+@import "../node_modules/bootstrap/less/grid.less";
+@import "../node_modules/bootstrap/less/tables.less";
+@import "../node_modules/bootstrap/less/forms.less";
+@import "../node_modules/bootstrap/less/buttons.less";
 
 // Components
-@import "../../node_modules/bootstrap/less/component-animations.less";
+@import "../node_modules/bootstrap/less/component-animations.less";
 // @import "../../node_modules/bootstrap/less/dropdowns.less";
 // @import "../../node_modules/bootstrap/less/button-groups.less";
 // @import "../../node_modules/bootstrap/less/input-groups.less";
-@import "../../node_modules/bootstrap/less/navs.less";
+@import "../node_modules/bootstrap/less/navs.less";
 // @import "../../node_modules/bootstrap/less/navbar.less";
 // @import "../../node_modules/bootstrap/less/breadcrumbs.less";
 // @import "../../node_modules/bootstrap/less/pagination.less";
@@ -65,5 +66,5 @@
 // @import "../../node_modules/bootstrap/less/carousel.less";
 
 // Utility classes
-@import "../../node_modules/bootstrap/less/utilities.less";
-@import "../../node_modules/bootstrap/less/responsive-utilities.less";
+@import "../node_modules/bootstrap/less/utilities.less";
+@import "../node_modules/bootstrap/less/responsive-utilities.less";

@@ -1,5 +1,4 @@
 node_modules
-public/fonts
-public/css
-public/js
+dist
 .firebase
+firebase-debug.log
