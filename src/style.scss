@@ -1,0 +1,146 @@
+@import "bootstrap";
+
+// Values ported from the Bootstrap 3 gray scale (gray-base #333)
+$gray:         #888;
+$gray-dark:    #666;
+$gray-lighter: #f2f2f2;
+
+header.main {
+    background-color: #3995d5;
+    // BS3 containers had a clearfix keeping the h1 margins inside the
+    // header, BS5 dropped it - flow-root restores that containment
+    display: flow-root;
+    h1 {
+        color: white;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+        margin-top: 0.8em;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        @include media-breakpoint-up(md) {
+            font-size: 4em;
+            text-align: right;
+        }
+        a,a:focus,a:active {
+            color: white;
+            text-decoration: none;
+        }
+    }
+    margin-bottom: 20px;
+}
+
+body.vcard h1 a {
+    cursor: default;
+}
+
+.content {
+    background-color: $gray-lighter;
+    padding: 20px;
+    border-radius: $border-radius-lg;
+
+    &>p:last-child,
+    &>div>div>p:last-child {
+        margin-bottom: 0;
+    }
+
+    img.profil {
+        border-radius: $border-radius;
+        transition: filter 1s;
+        filter: grayscale(100%);
+        &:hover {
+            filter: grayscale(0%);
+        }
+    }
+
+    ul.lite {
+        list-style: none;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+
+    .gray {
+        transition: opacity .3s;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .action-box {
+        float: right;
+    }
+
+    img#qr-platba {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+// Inline SVG icons (Material Symbols). The old glyphicons' ink filled
+// the whole 14px em box, Material Symbols pad 2/24 per side, so the
+// box must be 24/20 larger for the same optical size
+.icon {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+// Bank box: the .open class on #bank-box decides what is visible.
+// The slide is a height 0 <-> auto transition (interpolate-size),
+// browsers without it switch instantly. overflow: clip is used instead
+// of hidden on purpose: it does not establish a BFC, so the elements
+// keep overlapping the floated .action-box like the pre-BS5 layout
+// did (a BFC would shrink them next to the float and the QR image
+// could not span the full block width).
+:root {
+    interpolate-size: allow-keywords;
+}
+
+#bank-box {
+    .only-more,
+    .no-more {
+        overflow: hidden;
+        overflow: clip;
+        transition: height .2s ease-in-out, visibility .2s;
+    }
+
+    .only-more {
+        height: 0;
+        visibility: hidden;
+    }
+
+    .icon-collapse {
+        display: none;
+    }
+
+    &.open {
+        .only-more {
+            height: auto;
+            visibility: visible;
+        }
+
+        .no-more {
+            height: 0;
+            visibility: hidden;
+        }
+
+        .icon-expand {
+            display: none;
+        }
+
+        .icon-collapse {
+            display: inline;
+        }
+    }
+}
+
+footer.main {
+    margin-top: 20px;
+    background-color: $gray;
+    border-top: solid 1px $gray-dark;
+    font-size: 11px;
+    color: white;
+    .container {
+        padding: 20px;
+        text-align: center;
+    }
+}

@@ -5,31 +5,57 @@ Personal static website, deployed to Firebase Hosting via GitHub Actions.
 ## Build
 
 - **Vite** is the only build tool (`npm run dev` / `build` / `preview`), output in `dist/` (gitignored).
-- HTML entry points live in the project root: `index.html` and `cv/index.html`
-  (both configured in `vite.config.js`). `public/404.html` is self-contained
-  (inline styles) and is copied verbatim, like everything else in `public/`.
-- `src/main.js` is the single JS entry; it imports `style.less` (CSS is
-  extracted at build time) and the Bootstrap 3 plugins used by the site.
+- The single HTML entry point is `index.html` in the project root (Vite
+  default, no rollupOptions needed). `static/404.html` is self-contained
+  (inline styles) and is copied verbatim, like everything else in `static/`
+  (the Vite publicDir, renamed for clarity). The former `/cv` page was
+  deleted in 2026-08 as outdated — recoverable from git history.
+- `src/main.js` is the single JS entry; it imports `style.scss` (CSS is
+  extracted at build time). No jQuery, no Bootstrap JS — the only script
+  on the site is the vanilla bank-box toggle.
+- Styles: **Bootstrap 5** (Sass), customized in `src/bootstrap.scss`. Only the
+  modules the site uses are imported there, and **PurgeCSS** (postcss plugin
+  in `vite.config.js`, production build only) strips everything the HTML/JS
+  doesn't reference (~112 kB -> ~14 kB). Runtime-toggled classes must be in
+  its `safelist` (currently just `open`).
+
+## Design decisions (visual parity with the old Bootstrap 3 site)
+
+- `src/bootstrap.scss` variable values are ported from the compiled BS3
+  stylesheet (14px base font, BS3 line-height, #666 text, 750px container,
+  30px gutter, 4px/6px radii, 85% `small`). `$enable-rfs` and
+  `$enable-smooth-scroll` are off — BS3 had neither.
+- BS3's `sm` breakpoint (768px) maps to BS5's `md`; HTML uses `col-md-*`,
+  `order-md-*`, `d-none d-md-block`. The container is fluid below `md`.
+- `.btn-default` doesn't exist in BS5 — recreated via `button-variant` mixin.
+- `header.main` needs `display: flow-root`: BS3 containers had a clearfix
+  that kept the h1 margins inside the header; BS5 dropped it.
+- BS3 drew table row separators *above* rows, BS5 *below* — the last-row
+  border is stripped in `bootstrap.scss` so the lines land identically.
+- Icons are inline Material Symbols SVGs in the HTML (from
+  `@iconify-json/material-symbols`, Apache-2.0; glyphicons were removed in
+  BS5); no icon font, no runtime Iconify. To add an icon, install that
+  package with `--no-save` and copy the path from `icons.json`. Sizing is
+  the `.icon` CSS class (1.2em: Material's 24-grid has 2/24 padding per
+  side, glyphicon ink filled the whole em box).
+- The bank box is state-driven: JS only toggles `.open` on `#bank-box`
+  (plus `aria-expanded`); CSS decides visibility of `.only-more`/`.no-more`
+  and the two zoom icons, and animates height 0/auto via `interpolate-size`
+  (no animation in browsers without it). The collapsibles use
+  `overflow: clip`, NOT `hidden`, on purpose: hidden/grid would create a
+  BFC, which shrinks next to the floated `.action-box` button — the QR
+  image then cannot span the full block width (the old BS3 layout simply
+  overlapped the float).
 
 ## Gotchas
 
-- **Bootstrap 3 + Less 4**: requires `math: 'always'` in Vite's less options,
-  otherwise Bootstrap's un-parenthesized divisions break.
-- **jQuery global**: Bootstrap 3 plugin files reference the `jQuery` global.
-  `src/jquery-global.js` sets `window.jQuery`/`window.$` and must stay imported
-  in `main.js` *before* any `bootstrap/js/*` import.
-- **Glyphicon fonts**: `@icon-font-path` in `src/bootstrap.less` points into
-  `node_modules/bootstrap/fonts/`; Vite resolves and emits them hashed —
-  no manual font copy step.
 - **firebase.json `ignore`**: must NOT contain `**/assets/**` (Vite bundles
   live in `dist/assets/`) nor `**/.*` (would skip `.well-known/`).
-- Unused Bootstrap components are pruned manually via commented-out imports
-  in `src/bootstrap.less` (Bootstrap has no content-based tree-shaking).
+- Sass deprecation noise from Bootstrap is silenced in `vite.config.js`
+  (`quietDeps`, `silenceDeprecations: ['import']`).
 
-## Planned iterations (agreed with the user, do not do preemptively)
+## Modernization history (all planned iterations done)
 
-1. PurgeCSS on top of the current build (needs a safelist for JS-toggled
-   classes: `active`, `in`, `fade`, `collapsing`, glyphicon states).
-2. Bootstrap 3 → 5 upgrade, including Less → Sass migration and HTML class
-   renames; glyphicons replaced (removed in BS5).
-3. Drop jQuery: rewrite tabs + the `#bank-show-more` toggle in vanilla JS.
+Grunt -> Vite build, jQuery removed (CSS-state bank-box toggle),
+Bootstrap 3 -> 5 with Less -> Sass, glyphicons -> inline Material Symbols
+SVGs, PurgeCSS.
