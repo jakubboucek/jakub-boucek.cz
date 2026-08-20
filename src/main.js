@@ -1,3 +1,4 @@
+import './style.less';
 import $ from 'jquery';
 import 'bootstrap/js/transition';
 import 'bootstrap/js/tab';
