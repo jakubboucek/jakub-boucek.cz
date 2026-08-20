@@ -5,10 +5,11 @@ Personal static website, deployed to Firebase Hosting via GitHub Actions.
 ## Build
 
 - **Vite** is the only build tool (`npm run dev` / `build` / `preview`), output in `dist/` (gitignored).
-- HTML entry points live in the project root: `index.html` and `cv/index.html`
-  (both configured in `vite.config.js`). `static/404.html` is self-contained
+- The single HTML entry point is `index.html` in the project root (Vite
+  default, no rollupOptions needed). `static/404.html` is self-contained
   (inline styles) and is copied verbatim, like everything else in `static/`
-  (the Vite publicDir, renamed for clarity).
+  (the Vite publicDir, renamed for clarity). The former `/cv` page was
+  deleted in 2026-08 as outdated — recoverable from git history.
 - `src/main.js` is the single JS entry; it imports `style.scss` (CSS is
   extracted at build time). No jQuery, no Bootstrap JS — the only script
   on the site is the vanilla bank-box toggle.

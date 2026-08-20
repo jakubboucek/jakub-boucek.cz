@@ -7,12 +7,6 @@ export default defineConfig(({ command }) => ({
     publicDir: 'static',
     build: {
         outDir: 'dist',
-        rollupOptions: {
-            input: {
-                index: 'index.html',
-                cv: 'cv/index.html',
-            },
-        },
     },
     css: {
         preprocessorOptions: {
