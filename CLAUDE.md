@@ -13,8 +13,10 @@ Personal static website, deployed to Firebase Hosting via GitHub Actions.
   extracted at build time). No jQuery, no Bootstrap JS — the only script
   on the site is the vanilla bank-box toggle.
 - Styles: **Bootstrap 5** (Sass), customized in `src/bootstrap.scss`. Only the
-  modules the site uses are imported there — no content-based tree-shaking in
-  Bootstrap, pruning is manual via the import list.
+  modules the site uses are imported there, and **PurgeCSS** (postcss plugin
+  in `vite.config.js`, production build only) strips everything the HTML/JS
+  doesn't reference (~112 kB -> ~14 kB). Runtime-toggled classes must be in
+  its `safelist` (currently just `open`).
 
 ## Design decisions (visual parity with the old Bootstrap 3 site)
 
@@ -51,11 +53,8 @@ Personal static website, deployed to Firebase Hosting via GitHub Actions.
 - Sass deprecation noise from Bootstrap is silenced in `vite.config.js`
   (`quietDeps`, `silenceDeprecations: ['import']`).
 
-## Planned iterations (agreed with the user, do not do preemptively)
+## Modernization history (all planned iterations done)
 
-1. PurgeCSS on top of the current build (safelist: only `d-none` toggled by
-   the bank-box script; CSS is ~112 kB because full BS5 utilities are
-   compiled in).
-
-Done: jQuery removed (vanilla bank-box toggle), Bootstrap 3 → 5 upgrade
-with Less → Sass migration, glyphicons → inline SVG icons.
+Grunt -> Vite build, jQuery removed (CSS-state bank-box toggle),
+Bootstrap 3 -> 5 with Less -> Sass, glyphicons -> inline Material Symbols
+SVGs, PurgeCSS.
