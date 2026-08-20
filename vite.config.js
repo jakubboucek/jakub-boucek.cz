@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    // static assets copied verbatim into dist/ (Vite default name is "public")
+    publicDir: 'static',
     build: {
         outDir: 'dist',
         rollupOptions: {
