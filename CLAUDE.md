@@ -9,15 +9,13 @@ Personal static website, deployed to Firebase Hosting via GitHub Actions.
   (both configured in `vite.config.js`). `public/404.html` is self-contained
   (inline styles) and is copied verbatim, like everything else in `public/`.
 - `src/main.js` is the single JS entry; it imports `style.less` (CSS is
-  extracted at build time) and the Bootstrap 3 plugins used by the site.
+  extracted at build time). No jQuery, no Bootstrap JS — the only script
+  on the site is the vanilla bank-box toggle.
 
 ## Gotchas
 
 - **Bootstrap 3 + Less 4**: requires `math: 'always'` in Vite's less options,
   otherwise Bootstrap's un-parenthesized divisions break.
-- **jQuery global**: Bootstrap 3 plugin files reference the `jQuery` global.
-  `src/jquery-global.js` sets `window.jQuery`/`window.$` and must stay imported
-  in `main.js` *before* any `bootstrap/js/*` import.
 - **Glyphicon fonts**: `@icon-font-path` in `src/bootstrap.less` points into
   `node_modules/bootstrap/fonts/`; Vite resolves and emits them hashed —
   no manual font copy step.
@@ -28,8 +26,10 @@ Personal static website, deployed to Firebase Hosting via GitHub Actions.
 
 ## Planned iterations (agreed with the user, do not do preemptively)
 
-1. PurgeCSS on top of the current build (needs a safelist for JS-toggled
-   classes: `active`, `in`, `fade`, `collapsing`, glyphicon states).
+1. PurgeCSS on top of the current build (safelist: only the glyphicon
+   zoom-in/zoom-out classes toggled by the bank-box script).
 2. Bootstrap 3 → 5 upgrade, including Less → Sass migration and HTML class
    renames; glyphicons replaced (removed in BS5).
-3. Drop jQuery: rewrite tabs + the `#bank-show-more` toggle in vanilla JS.
+
+Done: jQuery removed (bank-box toggle rewritten in vanilla JS, dead tabs
+code deleted).
