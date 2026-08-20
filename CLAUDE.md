@@ -31,12 +31,17 @@ Personal static website, deployed to Firebase Hosting via GitHub Actions.
 - Icons are inline Material Symbols SVGs in the HTML (from
   `@iconify-json/material-symbols`, Apache-2.0; glyphicons were removed in
   BS5); no icon font, no runtime Iconify. To add an icon, install that
-  package with `--no-save` and copy the path from `icons.json`.
+  package with `--no-save` and copy the path from `icons.json`. Sizing is
+  the `.icon` CSS class (1.2em: Material's 24-grid has 2/24 padding per
+  side, glyphicon ink filled the whole em box).
 - The bank box is state-driven: JS only toggles `.open` on `#bank-box`
   (plus `aria-expanded`); CSS decides visibility of `.only-more`/`.no-more`
-  and the two zoom icons, and animates via a grid-template-rows 0fr/1fr
-  transition (collapsible elements need a single wrapper child with
-  `overflow: hidden`).
+  and the two zoom icons, and animates height 0/auto via `interpolate-size`
+  (no animation in browsers without it). The collapsibles use
+  `overflow: clip`, NOT `hidden`, on purpose: hidden/grid would create a
+  BFC, which shrinks next to the floated `.action-box` button — the QR
+  image then cannot span the full block width (the old BS3 layout simply
+  overlapped the float).
 
 ## Gotchas
 

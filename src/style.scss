@@ -84,27 +84,28 @@ body.vcard h1 a {
 	height: 1.2em;
 }
 
-// Bank box: the .open class on #bank-box decides what is visible,
-// the 0fr/1fr grid-row transition animates the slide (each collapsible
-// element wraps its content in a single child with overflow: hidden)
+// Bank box: the .open class on #bank-box decides what is visible.
+// The slide is a height 0 <-> auto transition (interpolate-size),
+// browsers without it switch instantly. overflow: clip is used instead
+// of hidden on purpose: it does not establish a BFC, so the elements
+// keep overlapping the floated .action-box like the pre-BS5 layout
+// did (a BFC would shrink them next to the float and the QR image
+// could not span the full block width).
+:root {
+	interpolate-size: allow-keywords;
+}
+
 #bank-box {
 	.only-more,
 	.no-more {
-		display: grid;
-		transition: grid-template-rows .2s ease-in-out, visibility .2s;
-
-		> * {
-			overflow: hidden;
-		}
+		overflow: hidden;
+		overflow: clip;
+		transition: height .2s ease-in-out, visibility .2s;
 	}
 
 	.only-more {
-		grid-template-rows: 0fr;
+		height: 0;
 		visibility: hidden;
-	}
-
-	.no-more {
-		grid-template-rows: 1fr;
 	}
 
 	.icon-collapse {
@@ -113,12 +114,12 @@ body.vcard h1 a {
 
 	&.open {
 		.only-more {
-			grid-template-rows: 1fr;
+			height: auto;
 			visibility: visible;
 		}
 
 		.no-more {
-			grid-template-rows: 0fr;
+			height: 0;
 			visibility: hidden;
 		}
 
